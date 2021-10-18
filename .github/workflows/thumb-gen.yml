@@ -28,7 +28,7 @@ jobs:
         python-version: 3.9
     - name: generate
       run: |
-        python ./github-scripts/thumbgen.py
+        python ./.github/scripts/thumbgen.py
     # Our script updated README.md, but we need to commit all changes
     - name: Commit and push if changed
       run: |
