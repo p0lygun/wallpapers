@@ -1,5 +1,5 @@
 import pathlib
-with open('README_BASE.md', 'r') as FILE:
+with open('.github/README_BASE.md', 'r') as FILE:
     readme = FILE.read()
 
 wallpapers = pathlib.Path("wallpapers/").glob("*")
