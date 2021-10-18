@@ -2,7 +2,7 @@ import pathlib
 with open('README_BASE.md', 'r') as FILE:
     readme = FILE.read()
 
-wallpapers = pathlib.Path("rice/wallpapers/").glob("*")
+wallpapers = pathlib.Path("wallpapers/").glob("*")
 for wallpaper in wallpapers:
     readme += f'<img src="{wallpaper.as_posix()}" width="250">'
 
