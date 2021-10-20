@@ -18,7 +18,12 @@ for wallpaper in wallpapers:
     time_mapping.append([wallpaper.relative_to(root), t])
 time_mapping.sort(key=lambda x: x[1], reverse=True)
 
+readme += f"> Total wallpapers {len(time_mapping)}  \n" \
+          f"> Last wallpaper added [{time_mapping[0][0].name}]({time_mapping[0][0].as_posix()})"
+
 # print(time_mapping)
+# print(readme)
+
 for wallpaper in time_mapping:
     readme += f'<img src="{wallpaper[0].as_posix()}" width="250">'
 
