@@ -19,7 +19,7 @@ for wallpaper in wallpapers:
 time_mapping.sort(key=lambda x: x[1], reverse=True)
 
 readme += f"> Total wallpapers {len(time_mapping)}  \n" \
-          f"> Last wallpaper added [{time_mapping[0][0].name}]({time_mapping[0][0].as_posix()})"
+          f"> Last wallpaper added [{time_mapping[0][0].name}]({time_mapping[0][0].as_posix()})  \n\n"
 
 # print(time_mapping)
 # print(readme)
