@@ -11,10 +11,10 @@ wallpapers = (root / "wallpapers").glob("*")
 time_mapping = []
 
 for wallpaper in wallpapers:
-    git_cmd = ["git", "log", "--diff-filter=A", "--follow", "--format=%aD", "-1", "--", f"wallpapers/{wallpaper.name}"]
+    git_cmd = [*("git log -1 --pretty=format:%ci".split(' ')), f"wallpapers/{wallpaper.name}"]
     # gives # Mon, 18 Oct 2021 18:53:41 +0000
     git_out = subprocess.run(git_cmd, stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
-    t = datetime.strptime(git_out, "%a, %d %b %Y %H:%M:%S %z")
+    t = datetime.strptime(git_out, "%Y-%m-%d  %H:%M:%S %z")
     time_mapping.append([wallpaper.relative_to(root), t])
 time_mapping.sort(key=lambda x: x[1], reverse=True)
 
